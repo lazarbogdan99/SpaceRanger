@@ -9,7 +9,7 @@ using UnityEngine;
 
 
 
-public class FirstEnemies : MonoBehaviour
+public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private float velocity = 6f;
     public bool isFacingRight;
