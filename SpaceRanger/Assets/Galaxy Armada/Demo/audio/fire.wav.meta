@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: c626c52791d687447ad081731adc4b64
+labels:
+- Audio
+- Fx
+- SFX
+- Sounds
+timeCreated: 1429643397
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
