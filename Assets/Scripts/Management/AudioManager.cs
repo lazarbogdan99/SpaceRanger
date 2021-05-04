@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
     {
         if (_audioManager != this) return;
 
-        // We play the audio source based on the level we're at, background music for the levels and menu music for menu levels
+        // I play the audio source based on the level I're at, background music for the levels and menu music for menu levels
         if (scene.buildIndex < 2)
         {
             if (_backgroundAudioSource.clip != menuMusic)
@@ -71,11 +71,11 @@ public class AudioManager : MonoBehaviour
     private IEnumerator AudioRaisingEffect()
     {
         float time = 0;
-        // If the total time of the effect is small, we skip the effect, meaning we don't want it
+        // If the total time of the effect is small, I skip the effect, meaning I don't want it
         if (timeToReachMaxAudio <= 0.005f) _backgroundAudioSource.volume = 1;
         else
         {
-            // While we still didn't reach total time
+            // While I still didn't reach total time
             while (time <= timeToReachMaxAudio)
             {
                 // A simple formula
@@ -84,12 +84,12 @@ public class AudioManager : MonoBehaviour
                 // x(currentAudio) = (time * maxAudio) / maxTime(timeToReachMaxAudio)
                 _backgroundAudioSource.volume = time * maxAudio / timeToReachMaxAudio;
 
-                // We increament the timer
+                // I increament the timer
                 time += Time.deltaTime;
-                // this is put so we don't overload the CPU and make Unity crash
+                // this is put so I don't overload the CPU and make Unity crash
                 yield return null;
             }
-            // we clamp the audio to the max audio
+            // I clamp the audio to the max audio
             _backgroundAudioSource.volume = maxAudio;
         }
     }

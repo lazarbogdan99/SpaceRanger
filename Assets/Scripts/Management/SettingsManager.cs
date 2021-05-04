@@ -4,7 +4,8 @@ using System.IO;
 
 /**
  * Settings manager, a script that controls and holds global values for game settings, currently holds volume and resolution
- * How does it work: We hold a reference to a settings data object, we save / load data into that object and manipulate its variables at runtime
+ * How does it work: I hold a reference to a settings data object, 
+ * I save / load data into that object and manipulate its variables at runtime
  */
 public class SettingsManager : MonoBehaviour
 {

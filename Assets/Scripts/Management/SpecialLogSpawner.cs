@@ -22,7 +22,7 @@ public class SpecialLogSpawner : MonoBehaviour
     {
         logSpawnPoints = new List<Transform>();
         spawnedLogs = new List<GameObject>();
-        // We look for every spawn point with the tag SpecialLogSpawn
+        // I look for every spawn point with the tag SpecialLogSpawn
         // And add it to our List ( A list is a dynamic array )
         foreach (var obj in GameObject.FindGameObjectsWithTag("SpecialLogSpawn"))
         {
@@ -42,7 +42,7 @@ public class SpecialLogSpawner : MonoBehaviour
     void Update()
     {
 
-        // If certain time passed and we didn't spawn too many logs, spawn one
+        // If certain time passed and I didn't spawn too many logs, spawn one
         // And add it to the list
         if (timer >= spawnRate && spawnedLogs.Count < maxLogs)
         {
@@ -50,11 +50,11 @@ public class SpecialLogSpawner : MonoBehaviour
             var randomIndex = Random.Range(0, logSpawnPoints.Count);
             var obj = Instantiate(SpecialLog, logSpawnPoints[randomIndex].position, Quaternion.identity);
 
-            // We get the distance to the left and right boundaries
+            // I get the distance to the left and right boundaries
             var distToLeft = Vector2.Distance(logSpawnPoints[randomIndex].position, Left.transform.position);
             var distToRight = Vector2.Distance(logSpawnPoints[randomIndex].position, Right.transform.position);
 
-            // If the point is closer to the left boundary then we make the log go to the right
+            // If the point is closer to the left boundary then I make the log go to the right
             if (distToLeft < distToRight)
             {
                 obj.GetComponent<Logs>().ToTheRight = true;

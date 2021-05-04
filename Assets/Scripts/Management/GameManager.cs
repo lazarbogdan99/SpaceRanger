@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private UserManager _userManager;
 
     // who is the current player?
-    // So we don't have to search for the player each time we need to do an update
+    // So I don't have to search for the player each time I need to do an update
     private User _currentUser;
 
     private PauseMenu _pauseMenu;
@@ -62,11 +62,11 @@ public class GameManager : MonoBehaviour
 
     private void InitData()
     {
-        // we initialize the variables here
+        // I initialize the variables here
         _userManager = new UserManager();
         _userManager.users = _userManager.Load();
-        // we make sure if the list isn't empty, we grab the biggest id
-        // else we starting new
+        // I make sure if the list isn't empty, I grab the biggest id
+        // else I starting new
         if (_userManager.users != null && _userManager.users.users.Count > 0)
             nextId = _userManager.users.users[_userManager.users.users.Count - 1].id + 1;
         else
@@ -104,13 +104,13 @@ public class GameManager : MonoBehaviour
     }
     private void InitAudioManager()
     {
-        // We already got a reference to our AudioManager, go back
+        // I already got a reference to our AudioManager, go back
         if (audioManager != null) return;
 
-        // Find out if we, by any chance already have an AudioManager in the scene and get a reference to it
+        // Find out if I, by any chance already have an AudioManager in the scene and get a reference to it
         audioManager = FindObjectOfType<AudioManager>();
 
-        // Seems like we have to do some manual labour
+        // Seems like I have to do some manual labour
         if (!audioManager)
         {
             var @object = Instantiate(audioManagerPrefab, Vector3.zero, Quaternion.identity);
@@ -133,13 +133,13 @@ public class GameManager : MonoBehaviour
     }
     private void InitSettingsManager()
     {
-        // We already got a reference to our SettingsManager, go back
+        // I already got a reference to our SettingsManager, go back
         if (settingsManager != null) return;
 
-        // Find out if we, by any chance already have an SettingsManager in the scene and get a reference to it
+        // Find out if I, by any chance already have an SettingsManager in the scene and get a reference to it
         settingsManager = FindObjectOfType<SettingsManager>();
 
-        // Seems like we have to do some manual labour
+        // Seems like I have to do some manual labour
         if (!settingsManager)
         {
             var @object = Instantiate(settingsManagerPrefab, Vector3.zero, Quaternion.identity);
@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
 
     private void OrderUsers()
     {
-        // We order the users list based on their id
+        // I order the users list based on their id
         if (_userManager.users != null)
             _userManager.users.users = (from user in _userManager.users.users
                                         orderby user.id
