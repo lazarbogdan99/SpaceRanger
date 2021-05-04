@@ -71,7 +71,7 @@ public class PlayerHealthSystem : MonoBehaviour
         count = 0;
     }
 
-    // We have to wait for player's death coroutine to finish before we
+    // I have to wait for player's death coroutine to finish before we
     // Can reset the timer
     private void TimerUpDeath()
     {

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 /**
  * Dashing, how does it work?
- *      We first recieve input from the player, if he presses the dash key (defined in editor) and a direction key, the player will
+ *      I first recieve input from the player, if he presses the dash key (defined in editor) and a direction key, the player will
  *      Move in the direction (dashDistance) units, then spawns a particle effect and plays it
  */
 public class PlayerDash : MonoBehaviour
@@ -35,30 +35,33 @@ public class PlayerDash : MonoBehaviour
 
     private void Update()
     {
-        // we use axis raw instead of regular GetAxis because we just want the input from the player without any smoothing or interpolations
+        // I use axis raw instead of regular GetAxis because I just want the input from the player
+        //without any smoothing or interpolations
         // (GetAxis does some math to make the transition smooth instead of directly giving a 1 or -1 as a value)
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
-        // We can only dash if the player presesd dash key + a direction
+        // I can only dash if the player presesd dash key + a direction
         pressedDashCombo = Input.GetKeyDown(dashKey) && input.sqrMagnitude != 0;
-        // We spawn a cooldown graphics sprite to show how much the player should wait before the next dash, the scale is because if the player turns sideway
+        // I spawn a cooldown graphics sprite to show how much the player should wait before the next dash,
+        // the scale is because if the player turns sideway
         // while the image is still there, it will flip which is awkward
         cooldownGraphics.transform.localScale = new Vector3(-_player.transform.lossyScale.x, 1, 1);
 
         if (pressedDashCombo && canDash)
         {
-            // If player pressed the combination, we create the cooldown
+            // If player pressed the combination, I create the cooldown
             StartCoroutine(DashCooldown());
-            // We get the dash direction
+            // I get the dash direction
             Vector3 dash = input.normalized * dashDistance;
-            // We spawn the particle effect 
+            // I spawn the particle effect 
             SpawnDashEffect();
-            // Then we move the player
+            // Then I move the player
             _player.transform.position += dash;
         }
     }
 
-    // We spawn the particle effect here and we rotate it / Scale it to match our players's height and match the distance covered by the dash
+    // I spawn the particle effect here and I rotate it / Scale it to match our players's height 
+    //and match the distance covered by the dash
     private void SpawnDashEffect()
     {
         var playerPosition = _player.transform.position;
@@ -75,7 +78,8 @@ public class PlayerDash : MonoBehaviour
         main.startSizeX = dashDistance;
         main.startSizeY = playerSpriteRenderer.transform.lossyScale.y;
 
-        // After having the dash object spawned and configured / rotated correctly we play it, then destroy the game object to keep the hierarchy clean
+        // After having the dash object spawned and configured / rotated correctly I play it,
+        // then destroy the game object to keep the hierarchy clean
         effect.Play();
         Destroy(obj, 0.5f);
     }

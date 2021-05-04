@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-//my class
+
 [RequireComponent(typeof(PlayerAnimation))]
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(PlayerMovement))]
