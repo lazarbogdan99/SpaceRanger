@@ -16,7 +16,7 @@ public class SpecialLog : MonoBehaviour
     // Needed to modify the isDead variable to end the current game
     private PlayerHealthSystem _playerHealthSystem;
 
-    // Added
+
     // Reference to the global SpecialLogSpawner
     private SpecialLogSpawner _logSpawner;
 
@@ -39,7 +39,7 @@ public class SpecialLog : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // If we reach the time limit we self destruct
+        // If I reach the time limit I self destruct
         if (_timer >= selfDestructTimeout)
         {
             _timer = 0;
@@ -57,7 +57,7 @@ public class SpecialLog : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // If player exists before we hit the mark, we reset the counter
+        // If player exists before I hit the mark, I reset the counter
         if (other.CompareTag("Player"))
         {
             _timer = 0;
@@ -68,7 +68,7 @@ public class SpecialLog : MonoBehaviour
     private void SelfDestruct()
     {
         var obj = Instantiate(particleEffectsPrefab, transform.position, Quaternion.identity);
-        // We destroy the particle effects after 2seconds from creating it
+        // I destroy the particle effects after n sec from creating it
         Destroy(obj, 1.0f);
 
         foreach (var o in _logSpawner.spawnedLogs)
@@ -80,7 +80,7 @@ public class SpecialLog : MonoBehaviour
             }
         }
 
-        // We self destruct
+        // I self destruct
         Destroy(gameObject, 0.1f);
 
         // Player lost
