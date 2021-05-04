@@ -1,0 +1,188 @@
+{
+    "users": [
+        {
+            "id": 0,
+            "username": "default",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 13300
+                },
+                {
+                    "levelName": "Level2",
+                    "levelScore": 8499
+                },
+                {
+                    "levelName": "Level3",
+                    "levelScore": 40300
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "username": "bvcn",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 100
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "username": "gfd",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 328
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "username": "dsfa",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 100
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "username": "safddgsd",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 100
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "username": "eusityu",
+            "levelScores": []
+        },
+        {
+            "id": 6,
+            "username": "mama",
+            "levelScores": []
+        },
+        {
+            "id": 7,
+            "username": "fdasfascvb",
+            "levelScores": []
+        },
+        {
+            "id": 8,
+            "username": "Acrylic",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 13299
+                },
+                {
+                    "levelName": "Level2",
+                    "levelScore": 8500
+                },
+                {
+                    "levelName": "Level3",
+                    "levelScore": 26900
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "username": "dfshfg",
+            "levelScores": []
+        },
+        {
+            "id": 10,
+            "username": "dsfafg",
+            "levelScores": []
+        },
+        {
+            "id": 11,
+            "username": "vcbx",
+            "levelScores": []
+        },
+        {
+            "id": 12,
+            "username": "hjgfjmnbmv",
+            "levelScores": []
+        },
+        {
+            "id": 13,
+            "username": "m,nncvbx",
+            "levelScores": []
+        },
+        {
+            "id": 14,
+            "username": "bvnbn",
+            "levelScores": []
+        },
+        {
+            "id": 15,
+            "username": "sda",
+            "levelScores": []
+        },
+        {
+            "id": 16,
+            "username": "nbmb",
+            "levelScores": []
+        },
+        {
+            "id": 17,
+            "username": "fdsafasd",
+            "levelScores": []
+        },
+        {
+            "id": 18,
+            "username": "ghfhd",
+            "levelScores": []
+        },
+        {
+            "id": 19,
+            "username": "nbmmvbnb",
+            "levelScores": []
+        },
+        {
+            "id": 20,
+            "username": "khk.k",
+            "levelScores": []
+        },
+        {
+            "id": 21,
+            "username": "bfvfjkl",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 3913
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "username": "hjgjfg",
+            "levelScores": []
+        },
+        {
+            "id": 23,
+            "username": "ooooooooooooo",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 8162
+                },
+                {
+                    "levelName": "Level2",
+                    "levelScore": 4413
+                },
+                {
+                    "levelName": "Level3",
+                    "levelScore": 1802
+                }
+            ]
+        }
+    ]
+}
