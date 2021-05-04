@@ -23,15 +23,15 @@ public class SettingsUI : MonoBehaviour
         var resolutions = Screen.resolutions;
         foreach (var res in resolutions)
         {
-            // We add resolutions at runtime, when user enables the options menu
+            // I add resolutions at runtime, when user enables the options menu
             resolutionsDropdown.options.Add(new TMP_Dropdown.OptionData(res.ToString()));
         }
 
-        // We add a tracking function, each time the value of the slider / dropdown changes, we update the settings manager data and save
+        // I add a tracking function, each time the value of the slider / dropdown changes, I update the settings manager data and save
         resolutionsDropdown.onValueChanged.AddListener(delegate { OnResolutionChange(); });
         volumeControl.onValueChanged.AddListener(delegate { OnVolumeChange(); });
 
-        // We load the data from the settings manager each time we enable the options menu
+        // I load the data from the settings manager each time I enable the options menu
         resolutionsDropdown.value = GameManager.Instance.settingsManager.ResolutionIndex;
         volumeControl.value = GameManager.Instance.settingsManager.Volume;
     }

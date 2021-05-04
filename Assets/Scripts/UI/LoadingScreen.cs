@@ -10,7 +10,8 @@ using UnityEngine.UI;
  *      This system is made for showing load screens between levels, and for some fade screen effects
  *      How does it work:
  *          The system first plays a fade in effect at the start of each level.
- *          Checks if the level (a scriptable object called LevelData) shows a background and story text in between levels, if it does then before the level loads
+ *          Checks if the level (a scriptable object called LevelData) shows a background and story text in between levels,
+ *          if it does then before the level loads
  *          It does a typing text animation on the story text using a simple coroutine while showing the background
  *          
  */
@@ -57,10 +58,10 @@ public class LoadingScreen : MonoBehaviour
 
         SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) =>
         {
-            // Each time a level loads, we fade in and set the current scene object (it refers to the loading screen scriptable data object)
+            // Each time a level loads, I fade in and set the current scene object (it refers to the loading screen scriptable data object)
             OnSceneLoaded();
             if (warpAtFinalScene && scene.buildIndex == GameManager.Instance.sceneCount - 1)
-                // If we want to warp and we're at the last level, we go back to the main menu
+                // If I want to warp and I're at the last level, I go back to the main menu
                 StartCoroutine(LoadSceneWithLoadScreen(1));
         };
         OnSceneLoaded();
@@ -68,7 +69,7 @@ public class LoadingScreen : MonoBehaviour
 
     private void OnSceneLoaded()
     {
-        // We get the current loading screen object when the scene loads
+        // I get the current loading screen object when the scene loads
         var u = (from loadingScreen in loadingScreens
                  where loadingScreen.buildIndex == SceneManager.GetActiveScene().buildIndex
                  select loadingScreen)?.ToArray();
@@ -117,14 +118,14 @@ public class LoadingScreen : MonoBehaviour
         StopCoroutine(TriggerFadeOut());
 
 
-        // We wait for a fade out to finish
+        // I wait for a fade out to finish
         yield return TriggerFadeOut();
 
-        // we get the current loading screen object from the list provided in the editor
+        // I get the current loading screen object from the list provided in the editor
         var @list = (from loadScreen in loadingScreens where loadScreen.buildIndex == buildIndex select loadScreen).ToArray();
         currentScene = @list?[0];
 
-        // if the level data wants to show background and story... and we're not debugging
+        // if the level data wants to show background and story... and I're not debugging
         // It does the animation and effect
         if (currentScene.showLoadScreenWithFade && !isDebugginSkipLoadScreen)
         {
@@ -133,10 +134,10 @@ public class LoadingScreen : MonoBehaviour
             backgroundImage.sprite = currentScene.backgroundImage;
             storyText.text = "";
 
-            // We fake loading by triggering a fade in effect while having the background enabled
+            // I fake loading by triggering a fade in effect while having the background enabled
             yield return TriggerFadeIn();
             int index = 0;
-            // The type writing effect, we add one character at a time to the UI text over a periode of time (provided in the editor)
+            // The type writing effect, I add one character at a time to the UI text over a periode of time (provided in the editor)
 
             // NEW: Story effect can be skipped by pressing any key during the animation
 
@@ -157,7 +158,7 @@ public class LoadingScreen : MonoBehaviour
             {
                 storyText.text += "\n\n- Pres Any Key -\n\n";
 
-                // here we wait for the player to input a key
+                // here I wait for the player to input a key
                 do
                 {
                     hasPressedKey = Input.anyKeyDown;
@@ -172,7 +173,7 @@ public class LoadingScreen : MonoBehaviour
         }
         AsyncOperation operation = SceneManager.LoadSceneAsync(buildIndex);
         // Here, in case the level had some time overload while loading or anything strange happened
-        // we make sure the screen stays white until the level is loaded, which then will trigger a fade in
+        // I make sure the screen stays white until the level is loaded, which then will trigger a fade in
         while (!operation.isDone)
         {
             yield return null;

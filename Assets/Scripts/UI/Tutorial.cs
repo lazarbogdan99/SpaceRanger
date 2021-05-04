@@ -4,7 +4,8 @@ using TMPro;
 
 /**
  * How does it work?
- *      The system enables a GUI text object when the player enters the trigger, it waits for the scale up animation then does the type writing effect (similar to loading
+ *      The system enables a GUI text object when the player enters the trigger, 
+ *      it waits for the scale up animation then does the type writing effect (similar to loading
  *      screen one) while having the player disabled
  */
 
@@ -32,7 +33,8 @@ public class Tutorial : MonoBehaviour
         UI_Text.text = "";
         parentObject.SetActive(false);
 
-        // Observer pattern for loading screen, we notify when the fade in effect is done, so we don't trigger UI or any other effects while the screen is white (or black)
+        // Observer pattern for loading screen, I notify when the fade in effect is done,
+        //so I don't trigger UI or any other effects while the screen is white (or black)
         LoadingScreen.OnLoadScreenFinishEvent += OnLoadScreenFinish;
     }
 

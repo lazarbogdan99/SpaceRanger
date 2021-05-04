@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 // This is the system used to load the levels in the main menu so the player can pick a level of his choice and play it
 // instead of replaying the whole game
-// It simply gets, from the save data system, all the levels the player played, then from these we can guess what was the last level the player
-// Unlocked, and we spawn buttons based on that, while using the loading screen effect ( fade in fade out and story and background ) to load the level
+// It simply gets,data from the save data system, all the levels the player played,
+//then from these I can guess what was the last level the player
+// Unlocked, and I spawn buttons based on that, while using the loading screen effect to load the level
 public class LoadLevel : MonoBehaviour
 {
     [SerializeField] private GameObject buttonTemplate;

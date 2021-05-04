@@ -41,7 +41,7 @@ public class ScaleUpAnimation : MonoBehaviour
             Time.timeScale = 0.1f;
         finishedAnimation = false;
 
-        // We first make sure that all the buttons are turned off / aren't active so we can
+        // I first make sure that all the buttons are turned off / aren't active so I can
         // Do a nice animation
         _postAnimationElements.SetActive(false);
 
@@ -69,7 +69,7 @@ public class ScaleUpAnimation : MonoBehaviour
 
         _animatedObject.localScale = localScale;
 
-        // We only finish if the object has reached the desired size
+        // I only finish if the object has reached the desired size
         if (_animatedObject.localScale.x >= 1 && _animatedObject.localScale.y >= 1)
         {
             Time.timeScale = (doSlowMotion && permanentSlowMotion) ? 0.1f : 1.0f;
@@ -88,7 +88,7 @@ public class ScaleUpAnimation : MonoBehaviour
     {
         // The animation is done, there's nothing to do
         if (finishedAnimation) return;
-        // We ensure the gameObject holding the script is enabled
+        // I ensure the gameObject holding the script is enabled
         if (!gameObject.activeSelf)
             gameObject.SetActive(true);
 

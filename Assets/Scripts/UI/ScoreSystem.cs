@@ -20,12 +20,12 @@ public class ScoreSystem : MonoBehaviour
 
         set
         {
-            // We make sure we don't set negative score by accident
+            // I make sure I don't set negative score by accident
             if (value >= 0)
             {
                 score = value;
-                // We update the text after updating the score's value
-                // This way we don't have to update the text in the Update() method
+                // I update the text after updating the score's value
+                // This way I don't have to update the text in the Update() method
                 // Which is heavy on CPU
                 UpdateScoreText();
             }
@@ -34,7 +34,7 @@ public class ScoreSystem : MonoBehaviour
 
     private void Start()
     {
-        // We init the text to "Score: 0"
+        // I init the text to "Score: 0"
         UpdateScoreText();
     }
 
@@ -43,23 +43,23 @@ public class ScoreSystem : MonoBehaviour
         scoreText.SetText($"Score: {score}");
     }
 
-    // This is the function to be called whenever we want to update the score in the file
+    // This is the function to be called whenever I want to update the score in the file
     public void SaveScore(Scene scene)
     {
-        // we have a local boolean to check if the level is new or we already played it
+        // I have a local boolean to check if the level is new or I already played it
         var levelExists = false;
-        // We calculate the score based on the provided formula
-        // We cast it to int since we don't want score to be something like 16.523 for example
+        // I calculate the score based on the provided formula
+        // I cast it to int since I don't want score to be something like 16.523 for example
         totalScore = (int)(long)(_timer.CurrentTime * score + 100);
 
-        // We loop through all of the levels the player has unlocked
+        // I loop through all of the levels the player has unlocked
         foreach (var i in GameManager.Instance.CurrentUser.levelScores)
         {
-            // if name matches, we hit the nail
-            // we already played this level, check if we got higher score
+            // if name matches, I hit the nail
+            // I already played this level, check if I got higher score
             if (i.levelName == scene.name)
             {
-                // We had a better play this time, update the score on the file
+                // I had a better play this time, update the score on the file
                 if (i.levelScore < totalScore)
                     i.levelScore = totalScore;
                 levelExists = true;
@@ -68,7 +68,7 @@ public class ScoreSystem : MonoBehaviour
         }
         if (!levelExists)
         {
-            // If it's a new level, we create a new one
+            // If it's a new level, I create a new one
             // and add it
             var levelData = new LevelData();
             levelData.levelName = scene.name;
@@ -76,7 +76,7 @@ public class ScoreSystem : MonoBehaviour
             var currentUser = GameManager.Instance.CurrentUser;
             currentUser.levelScores.Add(levelData);
         }
-        // We have to save our changes
+        // I have to save our changes
         GameManager.Instance.Save();
     }
 }

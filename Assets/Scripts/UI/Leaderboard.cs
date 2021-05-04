@@ -6,9 +6,11 @@ using TMPro;
 /**
  * Leaderboard:
  *      How does it work:
- *          The System first waits for the Scale Up Animation script to finish, then gets the list of all players from the game manager and orderes them
- *          by total score in a decending order, next it loops through that list of players (skipping the player named default since it's for debugging) and creates
- *          a UI object, based on the provided template, with the data retrieved from the player in the loop
+ *          The System first waits for the Scale Up Animation script to finish, 
+ *          then gets the list of all players from the game manager and orderes them
+ *          by total score in a decending order, 
+ *          next it loops through that list of players (skipping the player named default since it's for debugging) and creates
+ *          a UI object, based on the provided template, 
  */
 
 public class Leaderboard : MonoBehaviour
@@ -44,14 +46,15 @@ public class Leaderboard : MonoBehaviour
         var players = GameManager.Instance.Players.OrderByDescending(player => player.TotalScore).ToList();
         foreach (var user in players)
         {
-            // if the player is default, we skip since we're not interested
+            // if the player is default, I skip since I're not interested
             if (user.username.CompareTo("default") == 0) continue;
 
-            // We check if by any chance the player in the leaderboard already exists and we destroy it, this is to make sure data is updated
+            // I check if by any chance the player in the leaderboard already exists and I destroy it,
+            //this is to make sure data is updated
             var @obj = _contentObject.transform.Find(user.username);
             if (@obj) Destroy(@obj.gameObject);
 
-            // We instantiate an object based on a template
+            // I instantiate an object based on a template
             var player = Instantiate(_userTemplate);
 
             // Filling data
@@ -59,7 +62,7 @@ public class Leaderboard : MonoBehaviour
             player.SetActive(true);
             player.transform.SetParent(_contentObject.transform);
 
-            // making sure scale is 1 so we don't face size issues
+            // making sure scale is 1 so I don't face size issues
             player.GetComponent<RectTransform>().localScale = Vector3.one;
             SetTexts(player);
             usernameText.text = user.username;
