@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-// Same thing as a pickable coin, except here we use timer tank scriptable objects for holding our data
+// Same thing as a pickable coin, except here I use timer tank scriptable objects for holding our data
 public class PickableTimerTank : Collectible
 {
     [SerializeField]
@@ -25,7 +25,7 @@ public class PickableTimerTank : Collectible
 
     protected override void OnCollectibleEnter()
     {
-        // When player enters, we add to timer instead of adding to score
+        // When player enters, I add to timer instead of adding to score
         _timer.CurrentTime += timerTank.timeAdded;
     }
 }

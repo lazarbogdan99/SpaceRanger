@@ -9,20 +9,20 @@ public abstract class Collectible : MonoBehaviour
     [Tooltip("Time to elapse before destroying the game object")]
     [SerializeField] private float destroyDelay = 0.1f;
 
-    // A function that must be implemented by child class, what happens when the player enters the Collider?
+    // A function that must be implemented by child class
     protected abstract void OnCollectibleEnter();
-    // How do we animate the collectible? if we animate it
+    // I animate the collectible
     protected abstract void Animate();
 
     private void OnEnable()
     {
-        // We reenable the object when player loses a life (Observer pattern)
+        // I reenable the object when player loses a life (Observer pattern)
         PlayerHealthSystem.OnPlayerDeathEvent += ReEnable;
     }
 
     private void Update()
     {
-        // we Call the animate function, no matter how the child class implemented it, just use it
+        // I Call the animate function, no matter how the child class implemented it
         Animate();
     }
 
@@ -30,12 +30,12 @@ public abstract class Collectible : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // Since every single collectibe should play a sound, we play it here
+            // Since every single collectibe should play a sound, I play it here
             GameManager.Instance.audioManager.PlayBonusSound();
 
-            // we call the child class's implementation, what happens when player collects this object? add score? Time? energy boost?
+            // I call the child class's implementation, when player collects this object or add score or Time
             OnCollectibleEnter();
-            // If this object should be destroyed, we destroy it here
+            // If this object should be destroyed, I destroy it here
             if (destroy)
                 Destroy(gameObject, destroyDelay);
             else
@@ -45,7 +45,7 @@ public abstract class Collectible : MonoBehaviour
 
     private void OnDisable()
     {
-        // unsubscribe from the observer pattern, null error
+        // unsubscribe from the observer pattern, 
         PlayerHealthSystem.OnPlayerDeathEvent -= ReEnable;
     }
     private void ReEnable()
@@ -53,4 +53,4 @@ public abstract class Collectible : MonoBehaviour
         if (!destroy)
             gameObject.SetActive(true);
     }
-}
+} 
