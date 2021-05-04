@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 // Since Unity cannot directly write / Serialize
-// Arrays of objects, we need to write a wrapper class
+// Arrays of objects, I need to write a wrapper class
 // That has a field with all necessary data to write
 [System.Serializable]
 public class Users
