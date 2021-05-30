@@ -1,0 +1,48 @@
+{
+    "users": [
+        {
+            "id": 0,
+            "username": "default",
+            "levelScores": []
+        },
+        {
+            "id": 1,
+            "username": "975822",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 5596
+                },
+                {
+                    "levelName": "Level2",
+                    "levelScore": 1789
+                },
+                {
+                    "levelName": "Level3",
+                    "levelScore": 1730
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "username": "Bogdan",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 4987
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "username": "Lazar",
+            "levelScores": [
+                {
+                    "levelName": "Level1",
+                    "levelScore": 5017
+                }
+            ]
+        }
+        
+    ]
+}
